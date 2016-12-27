@@ -6,15 +6,12 @@
 
 @section('content')
 
-        @unless (empty($people))
 
-        <h1>There is name.</h1>
+        <h1>Developer Information</h1>
 
-        @endunless
+        @foreach ($developer as $user)
 
-        @foreach ($people as $person)
-
-         {{ $person }} 
+         {{ $user }}
 
         @endforeach
 

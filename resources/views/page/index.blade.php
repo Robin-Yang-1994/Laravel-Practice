@@ -7,7 +7,7 @@
 	@foreach ($cars as $car)
 
 		<div>
-			{{$car->brand}}
+			<a href="/cars/{{$car->id}}">{{$car->brand}}</a>
 		</div>
 
 	@endforeach

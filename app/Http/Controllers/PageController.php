@@ -14,8 +14,8 @@ class PageController extends Controller
 
     public function about()
     {
-    	$people = ['Robin', 'Kevin', 'Gary'];
+    	$developer = ['Robin Yang', 'U1352883', 'BSc Computing'];
 
-	return view('page.about', compact('people'));
+	return view('page.about', compact('developer'));
     }
 }
