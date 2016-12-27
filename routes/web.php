@@ -31,3 +31,5 @@ Route::get('/', 'PageController@home');
 Route::get('about', 'PageController@about');
 
 Route::get('cars', 'CarsController@index');
+
+Route::get('cars/{car}', 'CarsController@show');
