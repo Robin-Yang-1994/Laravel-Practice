@@ -20,4 +20,9 @@ class CarsController extends Controller
 
       return view('page.showcars', compact('car'));
     }
+
+    public function addInformation(Request $request){
+
+      return $request->all();
+    }
 }
