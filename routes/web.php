@@ -34,4 +34,8 @@ Route::get('cars', 'CarsController@index');
 
 Route::get('cars/{car}', 'CarsController@show');
 
-Route::post('cars/{car}/informations', 'CarsController@addInformation');
+Route::post('cars/{car}/informations', 'CarsController@addCarInformation');
+
+Route::get('informations/{information}/edit', 'InformationsController@editInformation');
+
+Route::patch('informations/{information}', 'InformationsController@updateInformation' );

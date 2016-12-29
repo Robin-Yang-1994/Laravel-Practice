@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use App\Information;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -18,11 +20,25 @@ class CarsController extends Controller
 
     public function show(Car $car){
 
+      $car->load('informations.user');
+
       return view('page.showcars', compact('car'));
     }
 
-    public function addInformation(Request $request){
+    public function addCarInformation(Request $request, Car $car){
 
-      return $request->all();
+      // $information = new Information;
+      // $information->body = $request->body;
+      // $car->informations()->save($information);
+      // return back();
+
+      $information = new Information($request->all());
+
+      //$information->by(Auth::user());
+
+      $car->addInformation($information, 1); //takes user id 1
+
+      return back();
+
     }
 }

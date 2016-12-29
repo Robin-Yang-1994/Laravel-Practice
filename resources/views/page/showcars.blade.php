@@ -12,7 +12,8 @@
 
   @foreach ($car->informations as $information)
 
-    <li class="list-group-item">{{$information->body}}</li>
+    <li class="list-group-item">{{$information->body}}
+		<a href="#" style="float:right"> Username: {{$information->user->username}} </a></li>
 
   @endforeach
 		</ul>
@@ -20,8 +21,9 @@
 
 		<hr>
 		<div class="form-group">
-			<h3>Add new contain to forum</h3>
+			<h3>Add new content to forum</h3>
 			<form method="POST" action="/cars/{{$car->id}}/informations">
+				{{csrf_field()}}
 				<textarea name="body" rows="4" cols="40"></textarea>
 
 		<div class="form-group">

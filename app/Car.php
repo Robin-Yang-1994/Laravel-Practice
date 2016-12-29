@@ -10,4 +10,11 @@ class Car extends Model
     {
       return $this->hasMany(Information::class);
     }
+
+    public function addInformation(Information $information, $userID)
+    {
+      $information->user_id = $userID;
+
+      return $this->informations()->save($information);
+    }
 }
