@@ -26,6 +26,7 @@
 //	return view('page.people', compact('people'));
 //});
 
+
 Route::get('/', 'PageController@home');
 
 Route::get('about', 'PageController@about');
@@ -39,3 +40,7 @@ Route::post('cars/{car}/informations', 'CarsController@addCarInformation');
 Route::get('informations/{information}/edit', 'InformationsController@editInformation');
 
 Route::patch('informations/{information}', 'InformationsController@updateInformation' );
+
+Auth::routes();
+
+Route::get('/dashboard', 'HomeController@index');

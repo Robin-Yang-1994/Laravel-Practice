@@ -31,7 +31,7 @@ class CarsController extends Controller
       // $information->body = $request->body;
       // $car->informations()->save($information);
       // return back();
-
+      $this->validate($request,['body'=>'required']);
       $information = new Information($request->all());
 
       //$information->by(Auth::user());

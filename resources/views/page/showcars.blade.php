@@ -30,6 +30,13 @@
 				<button type="Add" class="btn btn-primary">Add</button>
 		</form>
 		</div>
+		@if(count($errors))
+			<ul>
+				@foreach ($errors->all() as $error)
+					{{$error}}
+				@endforeach
+			</ul>
+		@endif
 		</div>
 
 @stop
